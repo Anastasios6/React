@@ -1,0 +1,16 @@
+#root {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.Age,
+.address {
+  border: 1px solid black;
+  width: 350px;
+  text-align: center;
+}
+.Age ul,
+.address ul {
+  list-style-type: none;
+}
