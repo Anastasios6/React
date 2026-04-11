@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.moviesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.movie {
+  border: 1px solid black;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+.moviesContainer .movie img {
+  width: 100px;
+}
