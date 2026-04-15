@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Movies = (props) => {
+export const Movies = ({ Movies }) => {
   return (
     <div className="moviesContainer">
-      {props.Movies.map((movie, i) => (
+      {Movies.map((movie, i) => (
         <div key={i} className="movie">
           <h1>{movie.name}</h1>
           <img src={movie.imgUrl} alt="" />
