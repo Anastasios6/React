@@ -1,0 +1,57 @@
+#App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 15px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+input {
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+.eye {
+  /* position: absolute; */
+  top: 263px;
+  left: 590px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#tableContainer {
+  width: 100%;
+}
+#signup-form {
+  display: flex;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+#SignupButton {
+  margin-top: 25px;
+  width: 100px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+#Comment {
+  display: flex;
+  gap: 10px;
+}
