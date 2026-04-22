@@ -2,9 +2,7 @@ import React, { useState } from "react";
 
 export const DataTable = ({ users }) => {
   const [tableVisibilty, setTableVisibility] = useState(false);
-  const tableToggle = () => {
-    setShowTable(!table);
-  };
+
   return (
     <div id="tableContainer">
       <button
@@ -16,7 +14,7 @@ export const DataTable = ({ users }) => {
         {tableVisibilty ? "Hide users table" : "Show Users table"}
       </button>
       {tableVisibilty && (
-        <table border={1} width={100}>
+        <table>
           <thead>
             <tr>
               <th>Username</th>

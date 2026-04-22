@@ -2,7 +2,6 @@ import React from "react";
 
 export const Input = ({
   type,
-  input,
   placeholder,
   onChange,
   value,
