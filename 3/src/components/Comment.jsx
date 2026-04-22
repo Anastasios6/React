@@ -25,7 +25,7 @@ export const Comment = ({ value, onChange }) => {
         className="expand"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        expand <i className="fa-solid fa-expand"></i>
+        <i className="fa-solid fa-expand"></i>
       </button>
     </div>
   );
