@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Todos = ({ todos, markTodoAsDone, deleteTodo }) => {
+export const Todos = ({
+  todos,
+  markTodoAsDone,
+  deleteTodo,
+  editingId,
+  editText,
+  setEditText,
+  editTodo,
+  saveEdit,
+  cancelEdit,
+}) => {
   return (
     <div>
-      <h1>Todos</h1>
       <table border={1} width={"100%"}>
         <thead>
           <tr>
@@ -15,14 +24,24 @@ export const Todos = ({ todos, markTodoAsDone, deleteTodo }) => {
         </thead>
         <tbody>
           {todos.map((todo, i) => {
+            const isEditing = editingId === todo.id;
             return (
               <tr key={i}>
                 <td> {todo.id}</td>
-                <td>{todo.text}</td>
+                <td>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editText}
+                      onChange={(e) => setEditText(e.target.value)}
+                    />
+                  ) : (
+                    todo.text
+                  )}
+                </td>
                 <td>
                   <input
                     type="checkbox"
-                    value={todo.done}
                     checked={todo.done}
                     onChange={() => {
                       markTodoAsDone(todo);
@@ -30,13 +49,35 @@ export const Todos = ({ todos, markTodoAsDone, deleteTodo }) => {
                   />
                 </td>
                 <td>
-                  <button
-                    onClick={() => {
-                      deleteTodo(todo.id);
-                    }}
-                  >
-                    Delete
-                  </button>
+                  {isEditing ? (
+                    <>
+                      <button
+                        onClick={() => {
+                          saveEdit(todo.id);
+                        }}
+                      >
+                        Save
+                      </button>
+                      <button onClick={cancelEdit}>Cancel</button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => {
+                          deleteTodo(todo.id);
+                        }}
+                      >
+                        Delete
+                      </button>
+                      <button
+                        onClick={() => {
+                          editTodo(todo);
+                        }}
+                      >
+                        Edit
+                      </button>
+                    </>
+                  )}
                 </td>
               </tr>
             );
