@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 export const CommentDetails = () => {
   const [details, setDetails] = useState({});
@@ -29,13 +29,13 @@ export const CommentDetails = () => {
         setTimeout(() => {
           if (res.status === 200) {
             setSubmitted(true);
-            alert("updated succesfully");
+            alert("Updated succesfully");
           }
         }, 2000);
       })
       .catch((err) => {
         setLoading(false);
-        alert("edit failed", err.message);
+        alert("Edit failed", err.message);
       });
   };
   if (submitted) {
@@ -77,9 +77,7 @@ export const CommentDetails = () => {
           />
 
           <>
-            <button type="submit" disabled={loading}>
-              {loading ? "updating" : "save changes"}
-            </button>
+            <button>{loading ? "Updating" : "Save changes"}</button>
             {!loading && (
               <button
                 onClick={() => {
