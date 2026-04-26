@@ -77,7 +77,9 @@ export const CommentDetails = () => {
           />
 
           <>
-            <button>{loading ? "Updating" : "Save changes"}</button>
+            <button disabled={loading}>
+              {loading ? "Updating" : "Save changes"}
+            </button>
             {!loading && (
               <button
                 onClick={() => {
