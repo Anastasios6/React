@@ -57,7 +57,7 @@ export const CommentDetails = () => {
           </button>
         </>
       ) : (
-        <form onSubmit={updateComment}>
+        <form className="editForm" onSubmit={updateComment}>
           <input
             type="text"
             value={details.name}
