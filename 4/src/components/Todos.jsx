@@ -10,6 +10,8 @@ export const Todos = ({
   editTodo,
   saveEdit,
   cancelEdit,
+  todosCounter,
+  setTodosCounter,
 }) => {
   return (
     <div>
@@ -43,6 +45,7 @@ export const Todos = ({
                   <input
                     type="checkbox"
                     checked={todo.done}
+                    value={todo.done}
                     onChange={() => {
                       markTodoAsDone(todo);
                     }}
@@ -65,6 +68,7 @@ export const Todos = ({
                       <button
                         onClick={() => {
                           deleteTodo(todo.id);
+                          setTodosCounter(todosCounter - 1);
                         }}
                       >
                         Delete

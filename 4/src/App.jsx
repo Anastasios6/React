@@ -6,7 +6,7 @@ export function App() {
 
   const [newTodo, setNewTodo] = useState("");
   function addNewTodo() {
-    const randomID = Math.random().toString(12).substring(2, 11);
+    const randomID = Math.ceil(Math.random() * 10000);
     if (newTodo.trim() !== "") {
       let newlyAddedTodo = {
         id: randomID,
@@ -19,10 +19,10 @@ export function App() {
       alert("Please enter a todo");
     }
   }
-  function markTodoAsDone(clickedTodo) {
+  function markTodoAsDone(todo) {
     setTodos([
       ...todos.map((item) =>
-        item.id === clickedTodo.id
+        item.id === todo.id
           ? { id: item.id, text: item.text, done: !item.done }
           : item,
       ),
@@ -34,6 +34,8 @@ export function App() {
     console.log(todoDelete);
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos([...updatedTodos]);
+    //Ova e od domashna od chas kucana.. So ovoj kod vadi bug vo todos Counter
+    // setTodos([...todos.filter((item) => item.id !== todoId)]);
   }
   const [todosCounter, setTodosCounter] = useState(todos.length);
 
@@ -98,6 +100,8 @@ export function App() {
         editTodo={editTodo}
         saveEdit={saveEdit}
         cancelEdit={cancelEdit}
+        todosCounter={todosCounter}
+        setTodosCounter={setTodosCounter}
       />
     </div>
   );
