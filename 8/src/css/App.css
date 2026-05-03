@@ -1,0 +1,9 @@
+#NewActionsFunc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#NewActionsFunc button {
+  width: 100px;
+  margin-bottom: 10px;
+}
