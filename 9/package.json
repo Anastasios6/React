@@ -1,5 +1,5 @@
 {
-  "name": "9",
+  "name": "chas11",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,8 +15,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.14.2",
-    "redux": "^5.0.1",
+    "react-router-dom": "^7.15.0",
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {

@@ -1,13 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
-import CakeReducer from "./reducers/CakeReducer";
-import CommentsReducer from "./reducers/CommentsReducer";
-import UsersReducer from "./reducers/UsersReducer";
+import { usersReducer } from "./components/users/duck";
+import { authReducer } from "./components/auth/duck/Index";
 
 const reducer = {
-  CakeReducer: CakeReducer,
-  CommentsReducer: CommentsReducer,
-  UsersReducer: UsersReducer,
+  usersReducer: usersReducer,
+  authReducer: authReducer,
 };
 
 const logger = createLogger();

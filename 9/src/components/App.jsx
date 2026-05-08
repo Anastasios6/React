@@ -1,12 +1,11 @@
 import React from "react";
-import { Nav } from "./components/Nav";
 import { Outlet } from "react-router-dom";
-import "./css/App.css";
+import { Nav } from "./Nav";
+
 export function App() {
   return (
-    <div>
-      <h1>9</h1>
-      <hr />
+    <div id="app">
+      <h1>App</h1>
       <nav>
         <Nav />
       </nav>
